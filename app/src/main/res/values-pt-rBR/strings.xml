@@ -20,7 +20,7 @@
     <string name="empty_title">Nenhum sistema ainda</string>
     <string name="empty_text">Adicione um firmware ARM do Android 2.3–6.0: ZIP de recovery, arquivo do Odin (.tar.md5), system.img ou imagem de fábrica.</string>
     <string name="empty_help">Quais arquivos servem?</string>
-    <string name="import_failed">Falha na importação</string>
+    <string name="import_failed">A importação falhou</string>
     <string name="import_running">Importando firmware</string>
     <string name="import_done">Firmware adicionado</string>
     <string name="import_start">Iniciando</string>
@@ -30,7 +30,7 @@
     <string name="start">Iniciar</string>
     <string name="rename">Renomear</string>
     <string name="help_title">Firmwares compatíveis</string>
-    <string name="help_text">• Android 2.3 e 4.0–4.4: suporte principal; 5.x–6.x: experimental.\n• Apenas firmware ARM de 32 bits (armeabi / armeabi-v7a).\n\nFormatos:\n• ZIP de recovery CWM/TWRP (MIUI, CyanogenMod, ports, a maioria das ROMs custom);\n• Samsung: .tar / .tar.md5 do Odin ou ZIP com AP_*.tar.md5;\n• imagens de fábrica do Google (.tgz / .zip);\n• system.img (ext4, sparse), backup TWRP system.ext4.win;\n• OTA com system.new.dat(.br) + system.transfer.list.\n\nO ideal é o arquivo conter boot.img: dele vem a ordem de inicialização dos serviços.</string>
+    <string name="help_text">• Android 2.3–6.x. Apenas firmware ARM de 32 bits (armeabi / armeabi-v7a).\n\nFormatos:\n• ZIP de recovery CWM/TWRP (MIUI, CyanogenMod, ports, a maioria das ROMs custom);\n• Samsung: .tar / .tar.md5 do Odin ou ZIP com AP_*.tar.md5;\n• imagens de fábrica do Google (.tgz / .zip);\n• system.img (ext4, sparse), backup TWRP system.ext4.win;\n• OTA com system.new.dat(.br) + system.transfer.list.\n\nO ideal é o arquivo conter boot.img: dele vem a ordem de inicialização dos serviços.</string>
     <string name="vs_screen">Tela do convidado</string>
     <string name="vs_fixed_2x">O Android 2.x usa tela fixa de 480×800 a 240 dpi.</string>
     <string name="vs_screen_hint">Quanto menor a tela, mais rápido o sistema.</string>
@@ -64,7 +64,7 @@
     <string name="back">Voltar</string>
     <string name="home">Início</string>
     <string name="recents">Recentes</string>
-    <string name="failed_start">Falha ao iniciar</string>
+    <string name="failed_start">Falha em inicialização</string>
     <string name="close">Fechar</string>
     <string name="retry">Tentar de novo</string>
     <string name="st_preparing">Preparando</string>

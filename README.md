@@ -2,11 +2,11 @@
 
 <img src="docs/assets/logo.png" width="128" alt="AEmulator Sunset logo"/>
 
-# AEmulator Sunset
+# AEmulator Fork
 
 **Run classic Android firmware — HTC Sense, TouchWiz, MIUI, AOSP — on a modern phone. No root, no PC.**
 
-[![Version](https://img.shields.io/badge/version-0.0.0.3--sunset.28-F4511E?style=for-the-badge)](https://github.com/drel4/AEmulator-Sunset/releases) [![License](https://img.shields.io/badge/license-GPL--3.0-F4511E?style=for-the-badge)](LICENSE) [![Android](https://img.shields.io/badge/Android-8.0%2B-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://github.com/drel4/AEmulator-Sunset) [![Fork](https://img.shields.io/badge/fork-drel4%2FAEmulator--Sunset-F4511E?style=for-the-badge&logo=github)](https://github.com/drel4/AEmulator-Sunset)
+[![Android](https://img.shields.io/badge/Android-8.0%2B-3DDC84?style=for-the-badge&logo=android&logoColor=white)]
 
 **🇬🇧 English** · [🇷🇺 Русский](docs/i18n/README.ru.md) · [🇺🇦 Українська](docs/i18n/README.uk.md) · [🇩🇪 Deutsch](docs/i18n/README.de.md) · [🇫🇷 Français](docs/i18n/README.fr.md) · [🇪🇸 Español](docs/i18n/README.es.md) · [🇧🇷 Português](docs/i18n/README.pt-BR.md) · [🇮🇹 Italiano](docs/i18n/README.it.md) · [🇵🇱 Polski](docs/i18n/README.pl.md) · [🇹🇷 Türkçe](docs/i18n/README.tr.md) · [🇸🇦 العربية](docs/i18n/README.ar.md) · [🇮🇷 فارسی](docs/i18n/README.fa.md) · [🇮🇳 हिन्दी](docs/i18n/README.hi.md) · [🇮🇩 Indonesia](docs/i18n/README.id.md) · [🇻🇳 Tiếng Việt](docs/i18n/README.vi.md) · [🇨🇳 简体中文](docs/i18n/README.zh-CN.md) · [🇯🇵 日本語](docs/i18n/README.ja.md) · [🇰🇷 한국어](docs/i18n/README.ko.md)
 
@@ -27,8 +27,8 @@ AEmulator Sunset boots a real Android 2.3–7.x system image straight from a fir
 
 ## 🚀 Quick start
 
-1. Download the APK from [Releases](https://github.com/drel4/AEmulator-Sunset/releases) and install it.
-2. Open AEmulator Sunset → **Add firmware** and pick the file. Import takes a few minutes.
+1. Download the APK from [Releases](https://github.com/felipevidal640-hue/AEmulator-Fork/releases) and install it.
+2. Open AEmulator Fork → **Add firmware** and pick the file. Import takes a few minutes.
 3. Press **Start**. The first boot is slower: the system optimises its apps.
 4. Use the ⋮ menu for volume, power button and logs; the ⚙️ button opens app settings and language.
 
@@ -63,7 +63,7 @@ This is a modified fork of [uxazu/AEmulator](https://github.com/uxazu/AEmulator)
 
 ## 🔗 Links
 
-- 🧬 Fork: [drel4/AEmulator-Sunset](https://github.com/drel4/AEmulator-Sunset)
+- 🧬 Fork: [drel4/AEmulator-Sunset](https://github.com/felipevidal640-hue/AEmulator-Fork)
 - ↑ Upstream: [uxazu/AEmulator](https://github.com/uxazu/AEmulator)
 - 👤 Author: [drel4](https://github.com/drel4)
 - 🧬 Original author: [t.me/istratiit_ech](https://t.me/istratiit_ech)

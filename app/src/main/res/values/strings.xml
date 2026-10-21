@@ -21,7 +21,7 @@
     <string name="empty_title">No systems yet</string>
     <string name="empty_text">Add an ARM firmware for Android 2.3–17: a recovery ZIP, an Odin archive (.tar.md5), system.img or a factory image.</string>
     <string name="empty_help">Which files work?</string>
-    <string name="import_failed">Import failed</string>
+    <string name="import_failed">Import error</string>
     <string name="import_running">Importing firmware</string>
     <string name="import_done">Firmware added</string>
     <string name="import_start">Starting</string>

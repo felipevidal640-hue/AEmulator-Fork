@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- создано app/l10n/gen.py, правьте langs/*.py -->
 <resources>
-    <string name="app_name" translatable="false">AEmulator</string>
+    <string name="app_name" translatable="false">AEmulator Fork</string>
     <string name="channel_vm">Running system</string>
     <string name="vm_running">%1$s is running</string>
     <string name="vm_running_hint">Tap to return to the system screen</string>
@@ -19,7 +19,7 @@
     <string name="storage_text">Allow access to all files: then each system’s memory card lives in the AEmulator folder of internal storage — handy for APKs, music and photos.</string>
     <string name="allow">Allow</string>
     <string name="empty_title">No systems yet</string>
-    <string name="empty_text">Add an ARM firmware for Android 2.3–6.0: a recovery ZIP, an Odin archive (.tar.md5), system.img or a factory image.</string>
+    <string name="empty_text">Add an ARM firmware for Android 2.3–17: a recovery ZIP, an Odin archive (.tar.md5), system.img or a factory image.</string>
     <string name="empty_help">Which files work?</string>
     <string name="import_failed">Import failed</string>
     <string name="import_running">Importing firmware</string>

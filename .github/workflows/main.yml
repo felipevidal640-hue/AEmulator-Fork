@@ -13,14 +13,16 @@ permissions:
 
 jobs:
   build:
-    name: Build Android APK
+    name: Build EmuDroid APK
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
 
     steps:
-      - name: Checkout source code
+      # 1. Download source code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 2. Install Java 17
       - name: Set up Java 17
         uses: actions/setup-java@v4
         with:
@@ -28,12 +30,50 @@ jobs:
           java-version: '17'
           cache: gradle
 
+      # 3. Install Android SDK
       - name: Set up Android SDK
         uses: android-actions/setup-android@v4
-        with:
-          packages: 'platform-tools'
 
-      - name: Install Android SDK packages
+      # 4. Remove Windows-only Gradle Java paths
+      - name: Fix Windows Java configuration
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          files = [
+              Path("gradle.properties"),
+              Path.home() / ".gradle" / "gradle.properties",
+          ]
+
+          for path in files:
+              if not path.is_file():
+                  continue
+
+              original = path.read_text(
+                  encoding="utf-8"
+              ).splitlines()
+
+              cleaned = [
+                  line for line in original
+                  if not line.strip().startswith(
+                      "org.gradle.java.home="
+                  )
+              ]
+
+              if cleaned != original:
+                  path.write_text(
+                      "\n".join(cleaned) + "\n",
+                      encoding="utf-8",
+                  )
+                  print(f"Fixed: {path}")
+              else:
+                  print(f"No Java override: {path}")
+          PY
+
+      # 5. Install Android SDK packages
+      - name: Install Android SDK and NDK
+        shell: bash
         run: |
           sdkmanager --install \
             "platform-tools" \
@@ -41,20 +81,29 @@ jobs:
             "build-tools;36.0.0" \
             "ndk;28.2.13676358"
 
-      - name: Check project files
+      # 6. Check Java and project
+      - name: Check build environment
+        shell: bash
         run: |
-          echo "Checking Gradle project..."
+          java -version
+          echo "JAVA_HOME=$JAVA_HOME"
           test -f gradlew || {
             echo "::error::gradlew not found in repository root"
             exit 1
           }
           chmod +x gradlew
-          ls -la
 
+      # 7. Build debug APK
       - name: Build debug APK
-        run: ./gradlew assembleDebug --stacktrace --no-daemon
+        shell: bash
+        run: |
+          ./gradlew \
+            --no-daemon \
+            --stacktrace \
+            assembleDebug
 
-      - name: Upload debug APK
+      # 8. Upload APK
+      - name: Upload APK artifact
         if: success()
         uses: actions/upload-artifact@v4
         with:
@@ -64,11 +113,12 @@ jobs:
           if-no-files-found: error
           retention-days: 14
 
-      - name: Upload build logs on failure
+      # 9. Upload diagnostic files if build fails
+      - name: Upload build diagnostics
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: EmuDroid-build-logs
+          name: EmuDroid-build-diagnostics
           path: |
             **/build/reports/
             **/build/outputs/logs/

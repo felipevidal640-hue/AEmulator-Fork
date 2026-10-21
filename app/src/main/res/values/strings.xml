@@ -68,7 +68,7 @@
     <string name="back">Back</string>
     <string name="home">Home</string>
     <string name="recents">Recents</string>
-    <string name="failed_start">Failed to start</string>
+    <string name="failed_start">An error occurred</string>
     <string name="close">Close</string>
     <string name="retry">Try again</string>
     <string name="st_preparing">Preparing</string>

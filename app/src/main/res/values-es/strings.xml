@@ -18,9 +18,9 @@
     <string name="storage_text">Permite el acceso a todos los archivos: así la tarjeta de memoria de cada sistema estará en la carpeta AEmulator del almacenamiento interno, cómoda para APK, música y fotos.</string>
     <string name="allow">Permitir</string>
     <string name="empty_title">Aún no hay sistemas</string>
-    <string name="empty_text">Añade un firmware ARM de Android 2.3–6.0: ZIP de recovery, archivo de Odin (.tar.md5), system.img o imagen de fábrica.</string>
+    <string name="empty_text">Añade un firmware ARM de Android 2.3–17: ZIP de recovery, archivo de Odin (.tar.md5), system.img o imagen de fábrica.</string>
     <string name="empty_help">¿Qué archivos sirven?</string>
-    <string name="import_failed">La importación falló</string>
+    <string name="import_failed">Error en la importación</string>
     <string name="import_running">Importando firmware</string>
     <string name="import_done">Firmware añadido</string>
     <string name="import_start">Iniciando</string>
@@ -64,7 +64,7 @@
     <string name="back">Atrás</string>
     <string name="home">Inicio</string>
     <string name="recents">Recientes</string>
-    <string name="failed_start">No se pudo iniciar</string>
+    <string name="failed_start">Se produjo un error</string>
     <string name="close">Cerrar</string>
     <string name="retry">Reintentar</string>
     <string name="st_preparing">Preparando</string>

@@ -6,16 +6,19 @@ on:
   push:
     branches:
       - main
+      - feature/modernization
 
 permissions:
   contents: read
 
 jobs:
   build:
+    name: Build Android APK
     runs-on: ubuntu-latest
+    timeout-minutes: 60
 
     steps:
-      - name: Checkout repository
+      - name: Checkout source code
         uses: actions/checkout@v4
 
       - name: Set up Java 17
@@ -23,20 +26,51 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
+          cache: gradle
 
       - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+        uses: android-actions/setup-android@v4
+        with:
+          packages: 'platform-tools'
 
-      - name: Build APK
+      - name: Install Android SDK packages
         run: |
-          chmod +x gradlew
-          ./gradlew assembleDebug --stacktrace
+          sdkmanager --install \
+            "platform-tools" \
+            "platforms;android-36" \
+            "build-tools;36.0.0" \
+            "ndk;28.2.13676358"
 
-      - name: Upload APK
+      - name: Check project files
+        run: |
+          echo "Checking Gradle project..."
+          test -f gradlew || {
+            echo "::error::gradlew not found in repository root"
+            exit 1
+          }
+          chmod +x gradlew
+          ls -la
+
+      - name: Build debug APK
+        run: ./gradlew assembleDebug --stacktrace --no-daemon
+
+      - name: Upload debug APK
         if: success()
         uses: actions/upload-artifact@v4
         with:
           name: EmuDroid-debug-APK
-          path: app/build/outputs/apk/**/*.apk
+          path: |
+            **/build/outputs/apk/**/*.apk
           if-no-files-found: error
           retention-days: 14
+
+      - name: Upload build logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: EmuDroid-build-logs
+          path: |
+            **/build/reports/
+            **/build/outputs/logs/
+          if-no-files-found: ignore
+          retention-days: 7
